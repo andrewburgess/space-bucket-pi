@@ -3,10 +3,11 @@ const fs      = require('fs');
 const logger  = require('winston');
 const moment  = require('moment');
 
-const config  =  require('./config');
-const camera  =  require('./lib/camera');
+const config  = require('./config');
+const camera  = require('./lib/camera');
 const dropbox = require('./lib/dropbox');
 const pkg     = require('./package.json');
+const server  = require('./lib/server');
 
 logger.add(logger.transports.File, { filename: config.get('log'), level: 'info' });
 
@@ -28,3 +29,4 @@ const cronJob = new CronJob(config.get('cron'), () => {
 });
 
 cronJob.start();
+server.start();

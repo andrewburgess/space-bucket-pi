@@ -25,6 +25,13 @@ const config = convict({
         default: path.join(__dirname, 'spacebucket.log'),
         env: 'LOG',
         arg: 'log'
+    },
+    port: {
+        doc: 'Express port to listen to',
+        format: 'port',
+        default: 3000,
+        env: 'PORT',
+        arg: 'port'
     }
 });
 
