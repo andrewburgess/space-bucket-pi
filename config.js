@@ -27,14 +27,14 @@ const config = convict({
         arg: 'log'
     },
     photocell: {
-		pin: {
-			doc: 'Pin number to read photocell data from',
-			format: Number,
-			default: 29,
-			env: 'PHOTOCELL_PIN',
-			arg: 'photocell-pin'
-		}
-	},
+        pin: {
+            doc: 'Pin number to read photocell data from',
+            format: Number,
+            default: 29,
+            env: 'PHOTOCELL_PIN',
+            arg: 'photocell-pin'
+        }
+    },
     port: {
         doc: 'Express port to listen to',
         format: 'port',
