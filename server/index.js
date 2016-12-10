@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'production') {
     const webpackHotMiddleware = require('webpack-hot-middleware');
 
     let compiler = webpack(config);
-    app.use(webpackDevMiddleware(compiler, { quiet: true }));
+    app.use(webpackDevMiddleware(compiler));
     app.use(webpackHotMiddleware(compiler, { log: console.log }));
 }
 
@@ -36,6 +36,8 @@ app.get('*', (req, res) => {
 });
 
 module.exports.start = () => {
+    require('./api/socket').initialize(server);
+
     server.on('listening', () => {
         logger.info(`server listening on 0.0.0.0:${config.get('port')}`);
     });
