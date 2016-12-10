@@ -7,7 +7,7 @@ const config  = require('./config');
 const camera  = require('./lib/camera');
 const dropbox = require('./lib/dropbox');
 const pkg     = require('./package.json');
-const server  = require('./lib/server');
+const server  = require('./server');
 
 logger.add(logger.transports.File, { filename: config.get('log'), level: 'info' });
 

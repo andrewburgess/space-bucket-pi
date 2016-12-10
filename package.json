@@ -3,20 +3,47 @@
   "version": "1.0.0",
   "description": "Application to enhance a space bucket",
   "main": "index.js",
+  "scripts": {
+    "build": "webpack -p --config ./tools/webpack.production.js",
+    "clean": "rimraf dist .tmp",
+    "prebuild": "npm run clean",
+    "start": "cross-env NODE_ENV=development node index.js",
+    "start:prod": "cross-env NODE_ENV=production node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
     "convict": "^1.5.0",
     "cron": "^1.1.1",
+    "cross-env": "^3.1.3",
     "dropbox": "^2.5.0",
     "execa": "^0.5.0",
     "express": "^4.14.0",
     "lodash": "^4.17.2",
     "moment": "^2.17.1",
-    "raspicam": "^0.2.13",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^4.4.6",
+    "react-router": "^3.0.0",
+    "redux": "^3.6.0",
+    "styled-components": "^1.1.3",
+    "webpack": "^1.14.0",
     "winston": "^2.3.0"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "mocha"
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.9",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "eslint": "^3.12.0",
+    "eslint-config-revolt": "^1.0.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "rimraf": "^2.5.4",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.2"
   },
   "repository": {
     "type": "git",
