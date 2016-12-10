@@ -38,3 +38,6 @@ jspm_packages
 
 client/public/main.js
 client/public/vendor.js
+latest.jpg
+*.geany
+

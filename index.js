@@ -17,7 +17,7 @@ const cronJob = new CronJob(config.get('cron'), () => {
     const filename = `${moment().format('YYYYMMDDhhmmss')}.png`;
     camera.captureImage()
     .then((image) => {
-        fs.writeFileSync('latest.png', image);
+        fs.writeFileSync('latest.jpg', image);
         return dropbox.uploadFile(`/${filename}`, image);
     })
     .then(() => {

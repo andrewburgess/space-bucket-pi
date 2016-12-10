@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'production') {
     const webpackHotMiddleware = require('webpack-hot-middleware');
 
     let compiler = webpack(config);
-    app.use(webpackDevMiddleware(compiler));
+    app.use(webpackDevMiddleware(compiler, { quiet: true }));
     app.use(webpackHotMiddleware(compiler, { log: console.log }));
 }
 
