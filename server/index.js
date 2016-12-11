@@ -23,8 +23,8 @@ if (process.env.NODE_ENV === 'production') {
     const webpackHotMiddleware = require('webpack-hot-middleware');
 
     let compiler = webpack(config);
-    app.use(webpackDevMiddleware(compiler));
-    app.use(webpackHotMiddleware(compiler, { log: console.log }));
+    app.use(webpackDevMiddleware(compiler, { quiet: true }));
+    app.use(webpackHotMiddleware(compiler, { quiet: true }));
 }
 
 app.use('/', express.static(path.join(__dirname, '../', 'client', 'public')));
@@ -36,15 +36,19 @@ app.get('*', (req, res) => {
 });
 
 module.exports.start = () => {
-    require('./api/socket').initialize(server);
+	return new Promise((resolve, reject) => {
+		require('./api/socket').initialize(server);
 
-    server.on('listening', () => {
-        logger.info(`server listening on 0.0.0.0:${config.get('port')}`);
-    });
+		server.on('listening', () => {
+			logger.info(`server listening on 0.0.0.0:${config.get('port')}`);
+			resolve();
+		});
 
-    server.on('error', (err) => {
-        logger.error(err);
-    });
+		server.on('error', (err) => {
+			logger.error(err);
+			reject();
+		});
 
-    server.listen(config.get('port'), '0.0.0.0');
+		server.listen(config.get('port'), '0.0.0.0');
+	});    
 };

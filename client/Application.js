@@ -1,9 +1,9 @@
 import React  from 'react';
 import styled from 'styled-components';
 
-import { Colors } from './styles';
-import Header from './components/Header';
-import Panel  from './components/Panel';
+import { Colors }  from './styles';
+import Environment from './components/Environment';
+import Header      from './components/Header';
 
 const Container = styled.div`
     align-items: stretch;
@@ -31,7 +31,7 @@ const Application = () => {
         <Container>
             <Column>
                 <Header />
-                <Panel />
+                <Environment />
             </Column>
         </Container>
     );

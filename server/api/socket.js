@@ -10,17 +10,6 @@ class SocketServer {
         this._clients = [];
 
         this._io.on('connection', this.onConnection.bind(this));
-
-        setInterval(() => {
-            this._io.emit('update', {
-                type: 'ENVIRONMENT',
-                payload: {
-                    temperature: _.random(18, 36, true),
-                    humidity: 0,
-                    pressure: 0
-                }
-            });
-        }, 1000);
     }
 
     onConnection(socket) {
@@ -34,6 +23,10 @@ class SocketServer {
             this._clients.splice(this._clients.indexOf(socket), 1);
         });
     }
+    
+    send(type, data) {
+		this._io.emit(type, data);
+	};
 }
 
 module.exports.initialize = (http) => {

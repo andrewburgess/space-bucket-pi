@@ -1,10 +1,10 @@
 const ENVIRONMENT = 'ENVIRONMENT';
 
 const initial = {
-    temperature: null,
-    humidity: null,
-    pressure: null,
-    light: null
+    temperature: 0,
+    humidity: 0,
+    pressure: 0,
+    light: 'N/A'
 };
 
 export default function reducer(state = initial, action) {

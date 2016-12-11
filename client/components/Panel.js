@@ -7,7 +7,7 @@ const bindState = state => {
 
 const Panel = (props) => {
     return (
-        <h1>{props.temperature}</h1>
+        <h1>{props.temperature} degrees</h1>
     );
 }
 
