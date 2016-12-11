@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Colors } from './styles';
 import Header from './components/Header';
+import Panel  from './components/Panel';
 
 const Container = styled.div`
     align-items: stretch;
@@ -30,6 +31,7 @@ const Application = () => {
         <Container>
             <Column>
                 <Header />
+                <Panel />
             </Column>
         </Container>
     );

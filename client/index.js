@@ -1,15 +1,14 @@
 import { AppContainer } from 'react-hot-loader';
-import IO               from 'socket.io-client';
 import { Provider }     from 'react-redux';
 import React            from 'react';
 import ReactDOM         from 'react-dom';
 
-import Application from './Application';
-import createStore from './store';
+import Application  from './Application';
+import createStore  from './store';
+import socketClient from './socket';
 
 const store = createStore({});
-
-const socket = IO();
+socketClient(store.dispatch);
 
 const rootElement = document.getElementById('app');
 ReactDOM.render(

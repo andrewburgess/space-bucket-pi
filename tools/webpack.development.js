@@ -36,6 +36,7 @@ module.exports = {
             exclude: /(node_modules)/,
             query: {
                 cacheDirectory: true,
+                plugins: ['transform-object-rest-spread'],
                 presets: ['latest', 'react']
             }
         }]

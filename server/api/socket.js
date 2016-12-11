@@ -1,3 +1,4 @@
+const _        = require('lodash');
 const logger   = require('winston');
 const SocketIO = require('socket.io');
 
@@ -9,6 +10,17 @@ class SocketServer {
         this._clients = [];
 
         this._io.on('connection', this.onConnection.bind(this));
+
+        setInterval(() => {
+            this._io.emit('update', {
+                type: 'ENVIRONMENT',
+                payload: {
+                    temperature: _.random(18, 36, true),
+                    humidity: 0,
+                    pressure: 0
+                }
+            });
+        }, 1000);
     }
 
     onConnection(socket) {
