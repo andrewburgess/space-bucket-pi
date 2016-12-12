@@ -1,9 +1,7 @@
-import _           from 'lodash';
-import { connect } from 'react-redux';
-import React       from 'react';
-import styled      from 'styled-components';
-
-import { Colors } from '../styles';
+import _                    from 'lodash';
+import { connect }          from 'react-redux';
+import React, { PropTypes } from 'react';
+import styled               from 'styled-components';
 
 const bindState = state => state.environment;
 
@@ -62,6 +60,13 @@ const Environment = (props) => {
             </Panel>
         </Container>
     );
-}
+};
+
+Environment.propTypes = {
+    humidity: PropTypes.number,
+    light: PropTypes.number,
+    pressure: PropTypes.number,
+    temperature: PropTypes.number
+};
 
 export default connect(bindState)(Environment);

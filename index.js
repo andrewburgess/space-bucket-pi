@@ -5,13 +5,11 @@ const jobs    = require('./lib/jobs');
 const pkg     = require('./package.json');
 const server  = require('./server');
 
-const photocell = require('./lib/photocell');
-
 logger.add(logger.transports.File, { filename: config.get('log'), level: 'info' });
 
 console.log(`\nSPACEBUCKET v${pkg.version}\n\n`);
 
 server.start()
 .then(() => {
-	jobs.start();
+    jobs.start();
 });

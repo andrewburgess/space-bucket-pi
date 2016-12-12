@@ -36,19 +36,19 @@ app.get('*', (req, res) => {
 });
 
 module.exports.start = () => {
-	return new Promise((resolve, reject) => {
-		require('./api/socket').initialize(server);
+    return new Promise((resolve, reject) => {
+        require('./api/socket').initialize(server);
 
-		server.on('listening', () => {
-			logger.info(`server listening on 0.0.0.0:${config.get('port')}`);
-			resolve();
-		});
+        server.on('listening', () => {
+            logger.info(`server listening on 0.0.0.0:${config.get('port')}`);
+            resolve();
+        });
 
-		server.on('error', (err) => {
-			logger.error(err);
-			reject();
-		});
+        server.on('error', (err) => {
+            logger.error(err);
+            reject();
+        });
 
-		server.listen(config.get('port'), '0.0.0.0');
-	});    
+        server.listen(config.get('port'), '0.0.0.0');
+    });
 };

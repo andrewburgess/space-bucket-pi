@@ -1,4 +1,3 @@
-const _        = require('lodash');
 const logger   = require('winston');
 const SocketIO = require('socket.io');
 
@@ -23,10 +22,10 @@ class SocketServer {
             this._clients.splice(this._clients.indexOf(socket), 1);
         });
     }
-    
+
     send(type, data) {
-		this._io.emit(type, data);
-	};
+        this._io.emit(type, data);
+    }
 }
 
 module.exports.initialize = (http) => {
