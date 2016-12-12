@@ -28,6 +28,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use('/', express.static(path.join(__dirname, '../', 'client', 'public')));
+app.use('/latest.jpg', (req, res) => {
+    return res.sendFile(path.join(__dirname, '../', 'latest.jpg'));
+});
 
 app.use(require('./api'));
 
