@@ -30,7 +30,7 @@ const config = convict({
         pin: {
             doc: 'Pin number to read photocell data from',
             format: Number,
-            default: 29,
+            default: 37,
             env: 'PHOTOCELL_PIN',
             arg: 'photocell-pin'
         }
