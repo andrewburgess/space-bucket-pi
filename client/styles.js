@@ -6,5 +6,7 @@ export const Colors = {
     ACCENT_LIGHT: '#D9CB9E',
     PRIMARY: '#2A2C2B',
     PRIMARY_DARK: '#1E1E20',
-    PRIMARY_LIGHT: '#374140'
+    PRIMARY_LIGHT: '#374140',
+
+    BLUE: '#328190'
 };

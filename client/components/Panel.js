@@ -9,9 +9,10 @@ const Panel = styled.div`
     display: flex;
     flex: 0 1 auto;
     flex-direction: column;
-    margin: 16px;
-    padding: 16px 24px;
-    width: calc(50% - 32px);
+    height: calc(50% - 16px);
+    margin: 8px;
+    padding: 16px 8px;
+    width: calc(50% - 16px);
 `;
 
 export default Panel;
