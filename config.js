@@ -6,7 +6,7 @@ const config = convict({
     cron: {
         doc: 'Cron schedule for capturing images',
         format: String,
-        default: '0/15 * * * *',
+        default: '0,15,30,45 * * * *',
         env: 'CRON',
         arg: 'cron'
     },

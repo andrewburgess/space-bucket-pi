@@ -11,7 +11,7 @@ def readPhotocell(pin):
     time.sleep(0.1)
 
     GPIO.setup(pin, GPIO.IN)
-    while (GPIO.input(pin) == GPIO.LOW && reading < 1000):
+    while (GPIO.input(pin) == GPIO.LOW and reading < 1000):
         reading += 1
     return reading
 
