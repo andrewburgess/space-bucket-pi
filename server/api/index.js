@@ -1,30 +1,31 @@
 const express = require('express');
+const logger  = require('winston');
 const moment  = require('moment');
+
+const db = require('../../lib/db');
 
 const router = new express.Router();
 
 router.get('/history', (req, res) => {
-    return res.json([{
-        temperature: 24.2,
-        humidity: 54.3,
-        pressure: 1016.2,
-        createdAt: moment().subtract(3, 'days')
-    }, {
-        temperature: 23.4,
-        humidity: 55.1,
-        pressure: 1017.2,
-        createdAt: moment().subtract(2, 'days')
-    }, {
-        temperature: 23.1,
-        humidity: 55.3,
-        pressure: 1015.9,
-        createdAt: moment().subtract(1, 'days')
-    }, {
-        temperature: 22.9,
-        humidity: 55.4,
-        pressure: 1016.2,
-        createdAt: moment()
-    }]);
+    let start = moment(req.query.start || moment().subtract(1, 'days'));
+    let end = moment(req.query.end || moment());
+    db.Recording.find({
+        createdAt: {
+            $gte: start,
+            $lte: end
+        }
+    })
+    .then((results) => {
+        return res.json(results);
+    })
+    .catch((err) => {
+        logger.error(err);
+        return res.status(500).json({
+            error: true,
+            message: err.message,
+            stack: err.stack
+        });
+    });
 });
 
 module.exports = router;

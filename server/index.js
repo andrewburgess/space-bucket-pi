@@ -40,7 +40,7 @@ app.get('*', (req, res) => {
 
 module.exports.start = () => {
     return new Promise((resolve, reject) => {
-        //require('./api/socket').initialize(server);
+        require('./api/socket').initialize(server);
 
         server.on('listening', () => {
             logger.info(`server listening on 0.0.0.0:${config.get('port')}`);
