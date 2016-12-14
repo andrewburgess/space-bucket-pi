@@ -13,6 +13,7 @@ const Container = styled.div`
     font-weight: 700;
     padding: 24px 16px 16px;
     text-shadow: 2px 2px 1px ${Colors.PRIMARY_DARK};
+    z-index: 10
 `;
 
 const Header = () => {

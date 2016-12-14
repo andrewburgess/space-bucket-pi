@@ -1,3 +1,5 @@
+import axios           from 'axios';
+import axiosMiddleware from 'redux-axios-middleware';
 import {
     applyMiddleware,
     compose,
@@ -7,9 +9,17 @@ import thunk         from 'redux-thunk';
 
 import createReducers from './reducers';
 
+const client = axios.create({
+    baseURL: '/api',
+    responseType: 'json'
+});
+
 export default function (initial) {
     let store = createStore(createReducers(), initial, compose(
-        applyMiddleware(thunk),
+        applyMiddleware(
+            thunk,
+            axiosMiddleware(client)
+        ),
         process.env.NODE_ENV === 'development' && typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ?
             window.devToolsExtension() :
             f => f

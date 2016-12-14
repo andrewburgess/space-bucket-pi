@@ -32,7 +32,7 @@ app.use('/latest.jpg', (req, res) => {
     return res.sendFile(path.join(__dirname, '../', 'latest.jpg'));
 });
 
-app.use(require('./api'));
+app.use('/api', require('./api'));
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'client', 'index.html'));
@@ -40,7 +40,7 @@ app.get('*', (req, res) => {
 
 module.exports.start = () => {
     return new Promise((resolve, reject) => {
-        require('./api/socket').initialize(server);
+        //require('./api/socket').initialize(server);
 
         server.on('listening', () => {
             logger.info(`server listening on 0.0.0.0:${config.get('port')}`);

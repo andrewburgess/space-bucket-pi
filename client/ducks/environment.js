@@ -4,7 +4,7 @@ const initial = {
     temperature: 0,
     humidity: 0,
     pressure: 0,
-    light: 'N/A'
+    light: 0
 };
 
 export default function reducer(state = initial, action) {
