@@ -26,7 +26,6 @@
     "moment": "^2.17.1",
     "mongoose": "^4.7.2",
     "node-bme280": "^0.1.3",
-    "pi-gpio": "0.0.8",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-redux": "^4.4.6",
