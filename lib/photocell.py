@@ -1,6 +1,7 @@
 import sys
 import RPi.GPIO as GPIO, time, os
 
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 
 def readPhotocell(pin):
@@ -15,3 +16,5 @@ def readPhotocell(pin):
     return reading
 
 print readPhotocell(int(sys.argv[1]))
+
+GPIO.cleanup()
