@@ -63,6 +63,12 @@ class Environment extends Component {
         this.props.getHistory();
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (this.props.latest !== nextProps.latest) {
+            this.props.getHistor();
+        }
+    }
+
     render() {
         return (
             <Container>

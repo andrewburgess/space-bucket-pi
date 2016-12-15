@@ -7,7 +7,7 @@ const initial = {
 };
 
 export default function reducer(state = initial, action) {
-    switch (action.payload) {
+    switch (action.type) {
         case CRON:
             return {
                 ...state,
