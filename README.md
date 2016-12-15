@@ -25,15 +25,17 @@ npm install
 To run the development version (which uses `nodemon` and hot reloading `webpack`)
 
 ```
-npm start
+sudo npm start
 ```
 
 To run the production version (which will compile the client scripts)
 
 ```
-npm run build
-npm run start:prod
+sudo npm run build
+sudo npm run start:prod
 ```
+
+_Note: you need to run with `sudo` to read/write to the pins_
 
 ## Configuring
 
