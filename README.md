@@ -11,6 +11,7 @@ Enhances a Space Bucket with a sweet dashboard
 * [Adafruit Python GPIO](https://github.com/adafruit/Adafruit_Python_GPIO)
 * MongoDB
 * [Dropbox Token](http://dropbox.com/developers/apps) - Create an application, then generate an access token (which is unique to you)
+* [GraphicsMagick](http://www.graphicsmagick.org/)
 
 ## Running
 
@@ -52,3 +53,7 @@ file.
 | `port`          | `PORT`            | `port`          | Port number the server listens on  |
 
 The mongodb connection string defaults to `localhost` with no username/password
+
+# Notes
+
+* This is fairly tailored to my particular setup. Some modifications may be needed to work on your bucket, or maybe you can submit a PR making things more generic
