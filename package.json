@@ -1,0 +1,32 @@
+{
+  "name": "space-bucket-pi",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"nodemon --ignore app index.js\" \"cd app && npm start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewburgess/space-bucket-pi.git"
+  },
+  "author": "Andrew Burgess <andrew@andrewburgess.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewburgess/space-bucket-pi/issues"
+  },
+  "homepage": "https://github.com/andrewburgess/space-bucket-pi#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "concurrently": "^4.1.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "winston": "^3.1.0",
+    "ws": "^6.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}

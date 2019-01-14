@@ -41,3 +41,5 @@ client/public/vendor.js
 latest.jpg
 *.geany
 
+.env
+
