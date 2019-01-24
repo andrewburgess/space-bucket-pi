@@ -2,6 +2,7 @@ require("dotenv").config()
 
 const logger = require("winston")
 
+const jobs = require("./jobs")
 const server = require("./server")
 const pkg = require("./package.json")
 
@@ -14,4 +15,6 @@ logger.add(
 
 logger.info(`SPACEBUCKET v${pkg.version}\n\n`)
 
-server.start()
+server.start().then(() => {
+    jobs.start()
+})

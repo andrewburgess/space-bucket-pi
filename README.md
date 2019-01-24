@@ -10,6 +10,7 @@ The server is configured using environment variables
 CRON            Cron tab for capturing images
 DROPBOX_TOKEN   Token used for communicating with Dropbox
 LOG_LEVEL       Verbosity of the logger, defaults to "info"
+PHOTOCELL_PIN   Pin that photocell exists on
 PORT            Port to listen on, defaults to 3001
 ```
 

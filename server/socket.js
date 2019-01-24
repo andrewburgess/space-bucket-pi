@@ -1,3 +1,4 @@
+const { each } = require("lodash")
 const logger = require("winston")
 const ws = require("ws")
 
@@ -35,6 +36,14 @@ class SocketServer {
         console.log(data)
 
         socket.send("yo")
+    }
+
+    send(data) {
+        each(this._ws.clients, (client) => {
+            if (client.readyState === ws.OPEN) {
+                client.send(JSON.stringify(data))
+            }
+        })
     }
 }
 
