@@ -42,4 +42,4 @@ latest.jpg
 *.geany
 
 .env
-
+.vscode
