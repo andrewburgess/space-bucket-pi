@@ -2,12 +2,13 @@ const express = require('express');
 const logger  = require('winston');
 const moment  = require('moment');
 
-const db = require('../../lib/db');
+//const db = require('../../lib/db');
 
 const router = new express.Router();
 
 router.get('/history', (req, res) => {
-    let start = moment(req.query.start || moment().subtract(1, 'days'));
+    res.json([]);
+    /*let start = moment(req.query.start || moment().subtract(1, 'days'));
     let end = moment(req.query.end || moment());
     db.Recording.find({
         createdAt: {
@@ -25,7 +26,7 @@ router.get('/history', (req, res) => {
             message: err.message,
             stack: err.stack
         });
-    });
+    });*/
 });
 
 module.exports = router;
